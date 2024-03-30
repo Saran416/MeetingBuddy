@@ -1,5 +1,6 @@
 import replicate
 import os 
+import base64
 
 os.environ["REPLICATE_API_TOKEN"] = "r8_D1drOA4uzBmtzRFdMGJjbbrnGh8ROkV2Q16Vl"
 
