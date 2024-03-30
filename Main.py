@@ -56,16 +56,10 @@ while(1):
             image = pyautogui.screenshot() 
             image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR) 
             # writing it to the disk using opencv 
-            cv2.imwrite("image1.jpg", image)
+            cv2.imwrite("image1.png", image)
             g = open("output.txt", "r")
             tinput = g.read()
             print(tinput)
-            genresponse(tinput, 'https://replicate.delivery/pbxt/KRULC43USWlEx4ZNkXltJqvYaHpEx2uJ4IyUQPRPwYb8SzPf/view.jpg')
+            genresponse(tinput, 'image1.png')
 
     print("wrote text") 
-
-    '''input_file = 'output.txt'
-    output_file = 'final.txt'
-
-
-    TextRefiner.remove_waste(input_file,output_file)'''
