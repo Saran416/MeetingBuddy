@@ -46,22 +46,26 @@ def output_text(text):
     return 
 
 while(1):
-    text = record_text()
+        try:
+            text = record_text()
+            if(text!=None):
+                text = text.replace('{', '').replace('}', '').replace('"','').replace(':','').replace("text",'')
+                output_text(text)
+                if(NLP.respondornot(personname , text) == 1):
+                    winsound.Beep(frequency, duration)
+                    print("You have been mentioned")
+                    image = pyautogui.screenshot() 
+                    image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR) 
+                    # writing it to the disk using opencv 
+                    cv2.imwrite("image1.png", image)
+                    g = open("output.txt", "r")
+                    tinput = g.read()
+                    print(tinput)
+                    print("Getting your response...")
+                    genresponse(tinput, 'image1.png')
 
-    if(text!=None):
-        text = text.replace('{', '').replace('}', '').replace('"','').replace(':','').replace("text",'')
-        output_text(text)
-        if(NLP.respondornot(personname , text) == 1):
-            winsound.Beep(frequency, duration)
-            print("You have been mentioned")
-            image = pyautogui.screenshot() 
-            image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR) 
-            # writing it to the disk using opencv 
-            cv2.imwrite("image1.png", image)
-            g = open("output.txt", "r")
-            tinput = g.read()
-            print(tinput)
-            print("Getting your response...")
-            genresponse(tinput, 'image1.png')
-
-    print("Transcribing...") 
+            print("Transcribing...") 
+        except KeyboardInterrupt:
+            print("Thank You")
+            open('output.txt', 'w').close()
+            return
