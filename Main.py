@@ -1,11 +1,13 @@
 import speech_recognition as sr
-#import pyttsx3
-#import TextRefiner
 import NLP
 import pyautogui
 import cv2
 import numpy as np
 from llava import genresponse
+import winsound
+
+frequency = 2500  # Set Frequency To 2500 Hertz
+duration = 2000  # Set Duration To 1000 ms == 1 second
 
 #initialize recognizer 
 r = sr.Recognizer()
@@ -17,9 +19,9 @@ def record_text():
             #use the microphone as source for input
             with sr.Microphone() as source1:
                 r.adjust_for_ambient_noise(source1, duration=0.2)
-                print("test2")
+                print("Listening...")
                 audio1 = r.listen(source1,0,8)
-                print("test")
+                print("Converting to Text....")
                 MyText = r.recognize_vosk(audio1)
 
                 return MyText
@@ -52,7 +54,8 @@ while(1):
         text = text.replace('{', '').replace('}', '').replace('"','').replace(':','').replace("text",'')
         output_text(text)
         if(NLP.respondornot(personname , text) == 1):
-            print("NLP is called ")
+            winsound.Beep(frequency, duration)
+            print("You have been mentioned")
             image = pyautogui.screenshot() 
             image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR) 
             # writing it to the disk using opencv 
@@ -60,6 +63,7 @@ while(1):
             g = open("output.txt", "r")
             tinput = g.read()
             print(tinput)
+            print("Getting your response...")
             genresponse(tinput, 'image1.png')
 
-    print("wrote text") 
+    print("Transcribing...") 
