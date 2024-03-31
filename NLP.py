@@ -35,6 +35,5 @@ def respondornot(noun, sentence):
     else:
         return 0
 
-#this is to test whether the code recognizes a particular question as a prompt or not 
-respondornot('max','max can you respond')
+
         
