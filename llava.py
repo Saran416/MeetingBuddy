@@ -3,7 +3,7 @@ import os
 import base64
 import ctypes  # An included library with Python install.   
 
-os.environ["REPLICATE_API_TOKEN"] = "r8_D1drOA4uzBmtzRFdMGJjbbrnGh8ROkV2Q16Vl"
+os.environ["REPLICATE_API_TOKEN"] = "{REPLICATE_API_TOKEN}"
 
 print(os.environ.get("REPLICATE_API_TOKEN"))
 
