@@ -8,7 +8,7 @@ import winsound
 
 frequency = 2500  # Set Frequency To 2500 Hertz
 duration = 2000  # Set Duration To 1000 ms == 1 second
-personname = "{YOUR_NAME}"
+personname = "joseph"
 
 #initialize recognizer 
 r = sr.Recognizer()
@@ -45,7 +45,8 @@ def output_text(text):
     f.close()
     return 
 
-while(1):
+def main():
+    while(1):
         try:
             text = record_text()
             if(text!=None):
@@ -69,3 +70,5 @@ while(1):
             print("Thank You")
             open('output.txt', 'w').close()
             return
+        
+main()
