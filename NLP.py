@@ -3,7 +3,7 @@ import nltk
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-vtorecognize =model.encode(['tell', 'speak', 'respond', 'give', 'say', 'answer'], convert_to_numpy=True)
+vtorecognize =model.encode(['tell', 'speak', 'respond', 'give', 'say', 'answer','hear'], convert_to_numpy=True)
 
 
 def respondornot(noun, sentence):
@@ -31,11 +31,10 @@ def respondornot(noun, sentence):
                 continue
 
     if(count2 == 1 & count1 == 1):
-        print("test")
         return 1
     else:
-        print("fail")
         return 0
 
-respondornot('max','    max can you respond')
+#this is to test whether the code recognizes a particular question as a prompt or not 
+respondornot('max','max can you respond')
         
