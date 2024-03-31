@@ -1,6 +1,7 @@
 import replicate
 import os 
 import base64
+import ctypes  # An included library with Python install.   
 
 os.environ["REPLICATE_API_TOKEN"] = "r8_D1drOA4uzBmtzRFdMGJjbbrnGh8ROkV2Q16Vl"
 
@@ -20,13 +21,16 @@ def genresponse(text, imgurl):
             "image": dataurl,
             "top_p": 1,
             "prompt": "Help me, I am in a video meeting and the host has asked me something. This is what was said in the meeting previously, "+text+ " what should I respond with",
-            "max_tokens": 1024,
+            "max_tokens": 300,
             "temperature": 0.2
         }
     )
 
+    answer = ""
     # The yorickvp/llava-13b model can stream output as it's running.
     # The predict method returns an iterator, and you can iterate over that output.
     for item in output:
         # https://replicate.com/yorickvp/llava-13b/api#output-schema
-        print(item, end="")
+        answer += item
+
+    ctypes.windll.user32.MessageBoxW(0, answer, "Your Answer", 1)
