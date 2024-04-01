@@ -1,0 +1,1 @@
+*This project MeetingBuddy helps users to complete other tasks while they are in a video meeting. This code understands when a response is being expected from you and alerts you with a beep. It also prompts you with the response as well. We used an open-source LLM (LLaVA) to generate the response and we used Vosk to help us with speech to text transcription.*
