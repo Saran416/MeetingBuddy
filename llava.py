@@ -1,7 +1,6 @@
 import replicate
 import os 
 import base64
-import ctypes  # An included library with Python install.   
 
 os.environ["REPLICATE_API_TOKEN"] = "{REPLICATE_API_TOKEN}"
 
@@ -26,11 +25,6 @@ def genresponse(text, imgurl):
         }
     )
 
-    answer = ""
-    # The yorickvp/llava-13b model can stream output as it's running.
-    # The predict method returns an iterator, and you can iterate over that output.
     for item in output:
-        # https://replicate.com/yorickvp/llava-13b/api#output-schema
-        answer += item
-
-    ctypes.windll.user32.MessageBoxW(0, answer, "Your Answer", 1)
+        print(item, end="")   
+    print("")
