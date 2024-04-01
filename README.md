@@ -11,4 +11,5 @@ To see how to set up the project and use it check out the pdf attached in the re
 **Disclaimer:** Sometimes this doesn’t give accurate  results since Vosk and LLaVA are both relatively light softwares and there might be small errors in transcription and generating responses.
 ## Contributers
 Saran Konala @Saran416
+<br>
 Amogh Bindal @AmoghBindal
