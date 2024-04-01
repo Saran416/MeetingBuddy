@@ -4,7 +4,7 @@ import base64
 
 os.environ["REPLICATE_API_TOKEN"] = "{REPLICATE_API_TOKEN}"
 
-print(os.environ.get("REPLICATE_API_TOKEN"))
+#print(os.environ.get("REPLICATE_API_TOKEN"))
 
 #This Function Takes text and image and prints response
 def genresponse(text, imgurl):
