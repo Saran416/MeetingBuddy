@@ -42,8 +42,6 @@ Please look at the demo video below to see how it works
 ![Image Alt Text](./images/2.png)
 ![Image Alt Text](./images/3.png)
 
-## Process:
-
 5. **Change the name:**
 
 - In the “**Main.py**” file, replace {YOUR_NAME} with your name.
