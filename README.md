@@ -55,6 +55,7 @@ Please look at the demo video below to see how it works
 - Change Default device to "Stereo Mix".
 - When joining the video meeting, ensure your Audio Input device is a Microphone and not Default settings since we changed the Default to Stereo Mix.
 - When you are done using the application, make sure to change the sound settings to previously set Default Devices.
+  <br>
   ![Image Alt Text](./images/5.png)
   ![Image Alt Text](./images/6.png)
 
